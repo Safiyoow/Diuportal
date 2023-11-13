@@ -1,0 +1,112 @@
+<?php
+require '../dbConnection/connect.inc.php';
+require '../dbConnection/core.inc.php';
+
+if (login()) {
+    $myuser = $_SESSION['username'];
+    ?>
+    <div id="wrapper">
+        <div class="sidebar sidebar-dark bg-success">
+
+            <form action="home.php" method="GET">
+                <li class="nav-item action">
+
+                    <center>
+                        <img src="../images/logo.jpg" class="img-responsive img-thumbnail" width="90" height="70">
+                    </center>
+                    <large class="nav-link text-center font-weight-bold ">PROFILE</large>
+                </li>
+                <li class="nav-item active">
+                    <hr>
+                    <button type="submit" name="btnService" class="btn nav-link bg-gradient-success active ">SERVICE INFO</button>
+
+                    <button type="submit" name="btnPersonalDetail" class="btn nav-link bg-gradient-success ">PERSONAL INFO</button>
+
+                    <button type="submit" name="btnVerifyDetail" class="btn nav-link bg-gradient-success ">VERIFY DETAILS</button>
+
+                    <button type="submit" name="btnResult" class="btn nav-link bg-gradient-success ">ACADEMIC RESULT</button>
+                    <button type="submit" name="btnFees" class="btn nav-link bg-gradient-success ">ACCOUNT DETAILS</button>
+
+                    <button type="submit" name="btnTimeTable" class="btn nav-link bg-gradient-success ">TIME TABLE</button>
+
+                    <button type="submit" name="btnChangePassword" class="btn nav-link bg-gradient-success ">CHANGE PASSWORD</button>
+
+                    <button type="submit" name="btnLogout" class="btn nav-link bg-gradient-success ">LOGOUT</button>
+                    
+                    <!-- Add TOUR SERVICE button -->
+                    <button type="submit" name="btnTourService" class="btn nav-link bg-gradient-success ">TOUR SERVICE</button>
+                </li>
+            </form>
+        </div>
+
+        <div id="content-wrapper">
+            <nav class="navbar bg-white topbar navbar-fixed-top mb-4 shadow static-top ">
+                <h4 class="text-primary"> Dhaka International University </h4>
+                <small class="text-right"><?php echo $_SESSION['firstname']; echo " "; echo $_SESSION['lastname']; ?></small>
+            </nav>
+
+            <?php
+            // Check if the TOUR SERVICE button is clicked
+            if (isset($_GET['btnTourService'])) {
+                ?>
+                <div class='container-fluid'>
+                    <div class='row'>
+                        <div class='col-xl-6 col-lg-6 col-sm-12'>
+                            <div class='card shadow mb-5'>
+                                <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
+                                    <h6 class='m-0 font-weight-bold text-primary'>TOUR SERVICE</h6>
+                                </div>
+                                <div class='card-body'>
+                                    <p>
+                                        Explore our beautiful campus with our guided tours. Our campus is equipped with state-of-the-art facilities, modern classrooms, and vibrant student spaces. Join our tours to get a firsthand experience of the DIU atmosphere and learn about the rich history and culture of our institution.
+                                    </p>
+                                    <!-- Add more information about the TOUR service here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+
+            <!-- Your existing PHP code continues... -->
+        </div>
+    </div>
+
+    <!-- Your existing JavaScript and modal code continues... -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Your existing JavaScript code...
+    </script>
+    <!-- TOUR Service Modal continues... -->
+    <script>
+        $(document).ready(function () {
+            // Open the TOUR modal
+            $("#btnTourService").click(function () {
+                $("#tourModal").show();
+            });
+
+            // Close the TOUR modal
+            $("#closeTourModal").click(function () {
+                $("#tourModal").hide();
+            });
+        });
+    </script>
+
+    <!-- TOUR Service Modal continues... -->
+    <div id="tourModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTourModal">&times;</span>
+            <h2>TOUR SERVICE</h2>
+            <p>
+                Explore our beautiful campus with our guided tours. Our campus is equipped with state-of-the-art facilities, modern classrooms, and vibrant student spaces. Join our tours to get a firsthand experience of the DIU atmosphere and learn about the rich history and culture of our institution.
+            </p>
+            <!-- Add more information about the TOUR service here -->
+        </div>
+    </div>
+
+    <!-- Your existing PHP code continues... -->
+    <?php
+}
+?>
