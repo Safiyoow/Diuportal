@@ -182,7 +182,7 @@ if (login()) {
         <div class='col-xl-6 col-lg-6 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>SERVICE INFORMATION</h6>
+              <h6 class='m-0 font-weight-bold text-success'>SERVICE INFORMATION</h6>
             </div>
             <div class='card-body'>
               <div class="modal-header">
@@ -190,8 +190,8 @@ if (login()) {
         </div>
               <div class="modal-body">Select "Logout" below if you are ready to logout your account.</div>
         <div class="modal-footer">
-          <a class="btn btn-warning" href="home.php">Cancel</a>
-          <a class="btn btn-warning" href="logout.php">Logout</a>
+          <a class="btn btn-success" href="home.php">Cancel</a>
+          <a class="btn btn-success" href="logout.php">Logout</a>
         </div>
             </div>
           </div>
@@ -212,7 +212,7 @@ if (login()) {
          <div class='col-xl-3 col-lg-3 col-md-3'>
            <div class='card shadow mb-2'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>CHANGE PASSWORD</h6>
+              <h6 class='m-0 font-weight-bold text-success'>CHANGE PASSWORD</h6>
             </div>
             <div class='card-body'>
               <h5>CREATING NEW PASSWORD</h5>
@@ -225,9 +225,9 @@ if (login()) {
                   <input type='password' required="" class='form-control form-control-user' id='exampleLastName' placeholder='Confirm Passwords' name='confirmPassword' maxlength='30'>
                 </div>
                 <hr>
-                <input type="submit" name="btnChangeUserPassword" class="btn btn-warning btn-user btn-block" value="Submit">
+                <input type="submit" name="btnChangeUserPassword" class="btn btn-success btn-user btn-block" value="Submit">
                 <br>
-                <input type='reset' value='Cancel' class='btn btn-warning btn-user btn-block'>
+                <input type='reset' value='Cancel' class='btn btn-success btn-user btn-block'>
                 <hr>
                 </div>                
               </form>
@@ -252,7 +252,7 @@ if (login()) {
         <div class='col-xl-6 col-lg-6 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>PERSONAL INFORMATION</h6>
+              <h6 class='m-0 font-weight-bold text-success'>PERSONAL INFORMATION</h6>
             </div>
             <div class='card-body'>
               <div class="">
@@ -312,7 +312,7 @@ if (login()) {
                     ?>
                   </table>
                   <!-- <form action="ho.php" method="GET">
-                    <button name="btnUpdatePersonalDetails" class="btn btn-block btn-warning">Update Info</button>
+                    <button name="btnUpdatePersonalDetails" class="btn btn-block btn-success">Update Info</button>
                   </form> -->
                 </div>
               </div>
@@ -337,7 +337,7 @@ if (login()) {
         <div class='col-xl-6 col-lg-6 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>VERIFY INFORMATION</h6>
+              <h6 class='m-0 font-weight-bold text-success'>VERIFY INFORMATION</h6>
             </div>
             <div class='card-body'>
               <div class="">
@@ -399,9 +399,9 @@ if (login()) {
                   </table>
                   </div>
                   <form action="home.php" method="GET">
-                    <button type="submit" name="btnVerify" class="btn btn-block btn-warning">VERIFY INFO</button>
+                    <button type="submit" name="btnVerify" class="btn btn-block btn-success">VERIFY INFO</button>
                   </form>
-                  <button class="btn btn-block btn-warning" onclick="printContent('printPersonalDetails')">PRINT</button>
+                  <button class="btn btn-block btn-success" onclick="printContent('printPersonalDetails')">PRINT</button>
 
                 </div>
               </div>
@@ -424,7 +424,7 @@ if (login()) {
         <div class='col-xl-6 col-lg-6 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>VERIFY PERONAL INFORMATION</h6>
+              <h6 class='m-0 font-weight-bold text-success'>VERIFY PERONAL INFORMATION</h6>
             </div>
             <div class='card-body'>
               <div class="modal-header">
@@ -454,12 +454,12 @@ if (login()) {
         <div class='col-xl-8 col-lg-8 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>STATEMENT OF RESULT</h6>
+              <h6 class='m-0 font-weight-bold text-success'>STATEMENT OF RESULT</h6>
             </div>
             <div class='card-body'>
               <?php
 
-$query = "SELECT * FROM mathematics WHERE username = '$myuser'";
+$query = "SELECT * FROM math101 WHERE indexNumber = '$myuser'";
 $result = mysqli_query($connection,$query);
 
 if($result == false)
@@ -487,7 +487,7 @@ if($result == false)
      }
 
   
-  $query = "SELECT * FROM english WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM cse101 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
   if($result == false)
   {
@@ -511,7 +511,7 @@ if($result == false)
   }
 
 
-  $query = "SELECT * FROM social WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM eee101 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
   if($result == false)
   {
@@ -535,7 +535,7 @@ if($result == false)
     $SocialRemark = 'IC';
   }
 
-  $query = "SELECT * FROM science WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM cse102 WHERE username = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
   if($result == false)
   {
@@ -561,7 +561,7 @@ if($result == false)
   }
 
   
-  $query = "SELECT * FROM rme WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM cse202 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
 
   if($result == false)
@@ -586,7 +586,7 @@ if($result == false)
     $RMERemark = 'IC';
   }
   
-  $query = "SELECT * FROM ict WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM cse201 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
 
   if($result == false)
@@ -611,7 +611,7 @@ if($result == false)
     $ICTRemark = 'IC';
   }
   
-  $query = "SELECT * FROM bdt WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM ged101 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
 
   if($result == false)
@@ -636,7 +636,7 @@ if($result == false)
     $BDTRemark = 'IC';
   }
 
-  $query = "SELECT * FROM GhanaianLanguage WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM eee102 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
 
   if($result == false)
@@ -661,7 +661,7 @@ if($result == false)
     $GHLanguageRemark = 'IC';
   }
 
-  $query = "SELECT * FROM french WHERE username = '{$myuser}' ";
+  $query = "SELECT * FROM math201 WHERE indexNumber = '{$myuser}' ";
   $result = mysqli_query($connection, $query);
 
   if($result == false)
@@ -714,75 +714,101 @@ if($result == false)
   <div id="result">
     <center>
   <div class="table-responsive">
-    <table border="1">
+    <table border="1" class="table table-bordered  border-none  table-condense">
     <tr>
-    <td>
-      <table  width=100%>
+  <td>
+    <table width="100%" class="text-center table table-bordered  border-none  table-condense">
       <tr>
         <td>
-          <img src='../images/ucclogo.jpg' width=80 height=70>
+          <img src='../images/logo.jpg' width=80 height=70 class="mx-auto d-block">
         </td>
         <td>
-          <b><font size='5'>PATROVA INTERNATIONAL SCHOOL</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><br><br>
-          <font size='4' color='grey'><b>Student Terminal Report(Post: P.O BOX OS 1537, ACCRA-OSU)</b></font>
+          <b><font size='5'>Dhaka International University</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><br><br>
+          <font size='4' color='blue'><b>Academic Student Result</b></font>
         </td>
       </tr>
-      </table>
-    </td>
-    </tr>
-    <tr>
-    <td>
-      <table>
-        <tr><td><font size='4'>NAME OF <br>STUDENT: <?php echo strtoupper($_SESSION['firstname']); echo " "; echo strtoupper($_SESSION['lastname']); ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDEX NUMBER: <?php echo "$myuser"; ?></font></td></tr>
-        <tr><td><font size='4'>CLASS: FORM 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TERM: 3</font></td></tr>
-      </table>
-    </td>
-    </tr>
-    <tr>
-    <td>
-      <table width="100%" class="table table-bordered table-hover table-condense">
-        <tr><th><i>Subjects</i></th><th><i>Class score 50%</i></th><th><i>Exam Score 50%</i></th><th><i>Total Score 100%</i></th><th><i>Grade</i></th><th><i>Remark</i></th></tr>
-        <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;CORE</B></div></td>
-        <tr><td>&nbsp;English Language</td><td align="center"><?php echo "$EnglishClass"; ?></td><td align="center"><?php echo "$EnglishExam"; ?></td><td align="center"><?php echo "$EnglishTotal"; ?></td><td align="center"><?php echo "$EnglishGrade"; ?></td><td><?php echo "$EnglishRemark"; ?></td></tr>
-        <tr><td>&nbsp;Integrated Science</td><td align="center"><?php echo "$ScienceClass"; ?></td><td align="center"><?php echo "$ScienceExam"; ?></td><td align="center"><?php echo "$ScienceTotal"; ?></td><td align="center"><?php echo "$ScienceGrade"; ?></td><td><?php echo "$ScienceRemark"; ?></td></tr>
-        <tr><td>&nbsp;Mathematics</td><td align="center"><?php echo "$mathsClass"; ?></td><td align="center"><?php echo "$mathsExam"; ?></td><td align="center"><?php echo "$mathsTotal"; ?></td><td align="center"><?php echo "$mathsGrade"; ?></td><td><?php echo "$mathsRemark"; ?></td></tr>
-        <tr><td>&nbsp;Social Studies</td><td align="center"><?php echo "$SocialClass"; ?></td><td align="center"><?php echo "$SocialExam"; ?></td><td align="center"><?php echo "$SocialTotal"; ?></td><td align="center"><?php echo "$SocialGrade"; ?></td><td><?php echo "$SocialRemark"; ?></td></tr>
-        <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;ELECTIVES</B></div></td>
-        <tr><td>&nbsp;I.C.T</td><td align="center"><?php echo "$ICTClass"; ?></td><td align="center"><?php echo "$ICTExam"; ?></td><td align="center"><?php echo "$ICTTotal"; ?></td><td align="center"><?php echo "$ICTGrade"; ?></td><td><?php echo "$ICTRemark"; ?></td></tr>
-        <tr><td>&nbsp;B.D.T</td><td align="center"><?php echo "$BDTClass"; ?></td><td align="center"><?php echo "$BDTExam"; ?></td><td align="center"><?php echo "$BDTTotal"; ?></td><td align="center"><?php echo "$BDTGrade"; ?></td><td><?php echo "$BDTRemark"; ?></td></tr>
-        <tr><td>&nbsp;R.M.E</td><td align="center"><?php echo "$RMEClass"; ?></td><td align="center"><?php echo "$RMEExam"; ?></td><td align="center"><?php echo "$RMETotal"; ?></td><td align="center"><?php echo "$RMEGrade"; ?></td><td><?php echo "$RMERemark"; ?></td></tr>
-        <tr><td>&nbsp;Ghanaian Language</td><td align="center"><?php echo "$GHLanguageClass"; ?></td><td align="center"><?php echo "$GHLanguageExam"; ?></td><td align="center"><?php echo "$GHLanguageTotal"; ?></td><td align="center"><?php echo "$GHLanguageGrade"; ?></td><td><?php echo "$GHLanguageRemark"; ?></td></tr>
-        <tr><td>&nbsp;French</td><td align="center"><?php echo "$FrenchClass"; ?></td><td align="center"><?php echo "$FrenchExam"; ?></td><td align="center"><?php echo "$FrenchTotal"; ?></td><td align="center"><?php echo "$FrenchGrade"; ?></td><td><?php echo "$FrenchRemark"; ?></td></tr>
-
-      </table>
-    </td>
-    </tr>
+    </table >
+  </td>
+</tr>
 
     <tr>
     <td>
-      <table border="" width="100%" class="table-hover">
-        <tr class="warning"><td>&nbsp;ATTENDANCE</td><td>&nbsp;56 OUT OF 60</td><td>&nbsp;TOTAL SCORE: &nbsp; <?php echo "$rawScore/900"; ?></td></tr>
-        <tr><td>&nbsp;STATUS</td><td colspan=3>&nbsp;PROMOTED</td></tr>
-        <tr><td>&nbsp;CONDUCT</td><td colspan=3>&nbsp;HONEST</td></tr>
-        <tr><td>&nbsp;ATTITUDE</td><td colspan=3>&nbsp;SOCIABLE</td></tr>
-        <tr><td>&nbsp;INTEREST</td><td colspan=3>&nbsp;SPORTS AND GAME</td></tr>
-        <tr><td>&nbsp;REMARK</td><td colspan=3>&nbsp;STUDY YOUR GRADES AND IMPROVE UPON THE WEAK ONES.</td></tr>
-      </table><br>
-      <table border="1" width="50%" class="table-borderd table-hover">
-        <tr><td align="center"><b>GRADING CODE</b></td><td align="center"><b>GRADE</b></td><td><b>&nbsp;REMARK</b></td></tr>
-        <tr><td align="center">80 - 100</td><td align="center">1</td><td>&nbsp;Highest</td></tr>
-        <tr><td align="center">70 - 79</td><td align="center">2</td><td>&nbsp;Higher</td></tr>
-        <tr><td align="center">65 - 69</td><td align="center">3</td><td>&nbsp;High</td></tr>
-        <tr><td align="center">60 - 64</td><td align="center">4</td><td>&nbsp;High Average</td></tr>
-        <tr><td align="center">55 - 59</td><td align="center">5</td><td>&nbsp;Average</td></tr>
-        <tr><td align="center">50 - 54</td><td align="center">6</td><td>&nbsp;Low Average</td></tr>
-        <tr><td align="center">45 - 49</td><td align="center">7</td><td>&nbsp;Low</td></tr>
-        <tr><td align="center">35 - 44</td><td align="center">8</td><td>&nbsp;Lower</td></tr>
-        <tr><td align="center">00 - 34</td><td align="center">9</td><td>&nbsp;Lowest</td></tr>
+      <table class="table table-bordered  border-none  table-condense   ">
+        <tr ></tr><td><font size='4'  class="ml-2"> <strong>NAME:</strong> <?php echo strtoupper($_SESSION['firstname']); echo " "; echo strtoupper($_SESSION['lastname']); ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Reg:</strong> <?php echo "$myuser"; ?></font></td></tr>
+        <tr  ><td><font class="ml-2" size='4'><strong>Batch:</strong> 56 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Session:</strong> 2019-2020</font></td></tr>
       </table>
-      <font size='3' color='blue'><I><b>ANY ALTRATION TO THIS DOCUMENT RENDERS IT INVALID.</b></I></font><br>
-      <font size='3' color='green'><I><b>DATE & TIME PRINTED: 34/09/2019 TIME: 10:30</b></I></font><br>
-      <font size='3' color='orange'><I><b>POWERED BY CYPHER SOFTWARE. For more info. call: +233 546501162/+233 247101346</b></I></font>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <table width="100%" class="table table-bordered  border-none  table-condense mt-2">
+      <!-- sem-1 -->
+      <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 1</B></div></td>
+        <tr><td>&nbsp; CSE-101</td><td align="center"><?php echo "$EnglishClass"; ?></td><td align="center"><?php echo "$EnglishExam"; ?></td><td align="center"><?php echo "$EnglishTotal"; ?></td><td align="center"><?php echo "$EnglishGrade"; ?></td><td><?php echo "$EnglishRemark"; ?></td></tr>
+        <tr><td>&nbsp; CSE-102</td><td align="center"><?php echo "$ScienceClass"; ?></td><td align="center"><?php echo "$ScienceExam"; ?></td><td align="center"><?php echo "$ScienceTotal"; ?></td><td align="center"><?php echo "$ScienceGrade"; ?></td><td><?php echo "$ScienceRemark"; ?></td></tr>
+        <tr><td>&nbsp; MAT-101</td><td align="center"><?php echo "$mathsClass"; ?></td><td align="center"><?php echo "$mathsExam"; ?></td><td align="center"><?php echo "$mathsTotal"; ?></td><td align="center"><?php echo "$mathsGrade"; ?></td><td><?php echo "$mathsRemark"; ?></td></tr>
+        <tr><td>&nbsp; EEE-101</td><td align="center"><?php echo "$SocialClass"; ?></td><td align="center"><?php echo "$SocialExam"; ?></td><td align="center"><?php echo "$SocialTotal"; ?></td><td align="center"><?php echo "$SocialGrade"; ?></td><td><?php echo "$SocialRemark"; ?></td></tr>
+         <!-- sem-2 -->
+        <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 2</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td>&nbsp;CSE-201</td><td align="center"><?php echo "$ICTClass"; ?></td><td align="center"><?php echo "$ICTExam"; ?></td><td align="center"><?php echo "$ICTTotal"; ?></td><td align="center"><?php echo "$ICTGrade"; ?></td><td><?php echo "$ICTRemark"; ?></td></tr>
+        <tr><td>&nbsp;GED-101</td><td align="center"><?php echo "$BDTClass"; ?></td><td align="center"><?php echo "$BDTExam"; ?></td><td align="center"><?php echo "$BDTTotal"; ?></td><td align="center"><?php echo "$BDTGrade"; ?></td><td><?php echo "$BDTRemark"; ?></td></tr>
+        <tr><td>&nbsp;CSE-202</td><td align="center"><?php echo "$RMEClass"; ?></td><td align="center"><?php echo "$RMEExam"; ?></td><td align="center"><?php echo "$RMETotal"; ?></td><td align="center"><?php echo "$RMEGrade"; ?></td><td><?php echo "$RMERemark"; ?></td></tr>
+        <tr><td>&nbsp;EEE-102</td><td align="center"><?php echo "$GHLanguageClass"; ?></td><td align="center"><?php echo "$GHLanguageExam"; ?></td><td align="center"><?php echo "$GHLanguageTotal"; ?></td><td align="center"><?php echo "$GHLanguageGrade"; ?></td><td><?php echo "$GHLanguageRemark"; ?></td></tr>
+        <tr><td>&nbsp;MAT-201</td><td align="center"><?php echo "$FrenchClass"; ?></td><td align="center"><?php echo "$FrenchExam"; ?></td><td align="center"><?php echo "$FrenchTotal"; ?></td><td align="center"><?php echo "$FrenchGrade"; ?></td><td><?php echo "$FrenchRemark"; ?></td></tr>
+       
+        <!-- sem 3 -->
+        
+        <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 3</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+
+         <!-- sem 4-->
+        
+         <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 4</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+         <!-- sem 5 -->
+        
+         <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 5</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+         <!-- sem 6 -->
+        
+         <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 6</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+         <!-- sem 7 -->
+        
+         <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 7</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+         <!-- sem 8 -->
+        
+         <td style="background-color: #DCDCDC;" colspan=6><div class='text-danger'><B>&nbsp;Semester 8</B></div></td>
+       <tr><th><i>Subjects</i></th><th><i> Incourse</i></th><th><i> Final </i></th><th><i>Total Score</i></th><th><i>Grade</i></th><th><i>Grade Earned</i></th></tr>
+        <tr><td> <div  > Semester or Marks not exists <br></div></td></tr> 
+      </table>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+       
+      <table border="1" width="50%" class="table-borderd ">
+        <tr><td align="center"><b>GRADING SYSTEM</b></td><td align="center"><b>GRADE</b></td><td><b>&nbsp;REMARK</b></td></tr>
+        <tr><td align="center">80 - 100</td><td align="center">1</td><td>&nbsp;A+</td></tr>
+        <tr><td align="center">70 - 79</td><td align="center">2</td><td>&nbsp;A</td></tr>
+        <tr><td align="center">65 - 69</td><td align="center">3</td><td>&nbsp;B+</td></tr>
+        <tr><td align="center">60 - 64</td><td align="center">4</td><td>&nbsp; B</td></tr>
+        <tr><td align="center">55 - 59</td><td align="center">5</td><td>&nbsp;C+</td></tr>
+        <tr><td align="center">50 - 54</td><td align="center">6</td><td>&nbsp;C</td></tr>
+        <tr><td align="center">45 - 49</td><td align="center">7</td><td>&nbsp;D+</td></tr>
+        <tr><td align="center">35 - 44</td><td align="center">8</td><td>&nbsp;D</td></tr>
+        <tr><td align="center">00 - 34</td><td align="center">9</td><td>&nbsp;F</td></tr>
+      </table>
+ 
     </td>
     </tr>
   </table>
@@ -791,7 +817,7 @@ if($result == false)
   </div>
   <br>
   <center>
-    <button class="btn btn-warning btn-block " onclick="printContent('result')">Print</button>
+    <button class="btn btn-success btn-block " onclick="printContent('result')">Print</button>
   </center>
             </div>
           </div>
@@ -814,7 +840,7 @@ if($result == false)
         <div class='col-xl-8 col-lg-8 col-sm-12'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>EXAMINATION TIME TABLE</h6>
+              <h6 class='m-0 font-weight-bold text-success'>EXAMINATION TIME TABLE</h6>
             </div>
             <div class='card-body'>
               <div class="table-responsive">
@@ -847,7 +873,7 @@ if($result == false)
       ?>
       </table>
   </div>
-          <button class="btn btn-warning btn-block" onclick="printContent('printTimeTable')">Print</button>
+          <button class="btn btn-success btn-block" onclick="printContent('printTimeTable')">Print</button>
           </div>
             </div>
           </div>
@@ -870,7 +896,7 @@ if($result == false)
         <div class='col-xl-6 col-md-8 col-lg-6 col-sm-8'>
           <div class='card shadow mb-5'>
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
-              <h6 class='m-0 font-weight-bold text-warning'>FEES</h6>
+              <h6 class='m-0 font-weight-bold text-success'>ACCOUNT DETAILS</h6>
             </div>
             <div class='card-body'>
               <div class="table-responsive">
