@@ -46,7 +46,10 @@
        </div>
        <input type="submit" name="Login" class="btn btn-danger btn-user btn-block" value="Login">
        <hr>
-       <a href="#" class="text-center text-waning">Forgot Password</a>
+      
+        <a href="#" class="text-center text-waning  ">Forgot Password</a>
+       <a href="../index.php" class="text-center text-primary">Go Back</a>
+   
      </form>
    </div>
  </div>

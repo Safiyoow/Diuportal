@@ -11,6 +11,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="admin/index.php">Admin</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student/index.php">student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="staff/index.php">staff</a>
+                    </li>
                     <li class="nav-item bg-warning rounded-pill px-2">
                         <a class="nav-link text-primary"   href="https://diu.ac/">Learn more </a>
                     </li>

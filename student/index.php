@@ -24,17 +24,23 @@
  
         <nav class="navbar navbar-expand-lg navbar-primary   ">
             <div class="container">
-                 <div class="logo">
+                 <div class="logo w-100">
                     <img class="pe-2"  src="../images/logo.jpg" width="50" height="30" alt="logo ">  DIU Portal</a>
                </div>
-                <ul class="navbar-nav ml-auto"></ul>
+                <ul class="navbar-nav ml-auto w-25"></ul>
                     <li class="nav-item active">
                         <a class="nav-link" href="../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/index.php">Admin</a>
                     </li>
-                    <li class="nav-item bg-warning rounded-pill px-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../student/index.php">student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../staff/index.php">staff</a>
+                    </li>
+                    <li class="nav-item bg-warning rounded-pill px-2  w-25">
                         <a class="nav-link text-primary"   href="https://diu.ac/">Learn more </a>
                     </li>
                     

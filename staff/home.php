@@ -64,14 +64,27 @@ if(login())
               <h6 class='m-0 font-weight-bold text-danger'>SERVICE INFORMATION</h6>
             </div>
             <div class='card-body'>
-              <p>
-        You are kindly invited to participate in the research entitled Assessment and Awareness Creation of Hypokenetic risk Risk Factor of Disease for life modification. <br>
-        The University of Cape Coast (UCC) is committed to providing a Campus free from Sexual Harassment, assult,stalking and intimate partner violence. <br>
-        The purpose of this questionaire is to assess the campus climate and culture in relation to Sexual Harassment, including the experience of students and degree to which students feel safe and respect, particularly in regard to issues of sexual harassment. <br>
-        We are interested in learning more about students' knowledge and satisfaction related to UCC resources and policies on sexual harassment.<br>
-        The data we collect will be use to improve campus response, intervention, and prevention efforts.<br>
-        Thank you.<br>
-        </p>
+          <p>
+                        Dear Student,  <br/>
+
+          Welcome to Dhaka International University (DIU)! Your gateway to knowledge, growth, and a vibrant academic community.
+          <br/>
+          <strong>Research Study: </strong>  <br/>
+          We invite you to participate in our ongoing research aimed at understanding the hypokinetic risk factor of diseases for life modification. Your insights will contribute to the enhancement of health awareness and interventions.
+          <br/>
+          <strong> Campus Safety: </strong> <br/>
+          DIU is dedicated to providing a secure environment. Our commitment extends to fostering a campus free from sexual harassment, assault, stalking, and intimate partner violence. Your safety and well-being are our top priorities.
+          <br/>
+          <strong> Student Portal: </strong><br/>
+          Explore the DIU Student Portal for a seamless academic experience. Access important resources, view grades, and stay updated on campus news. This platform also allows you to apply for free hostel accommodation, ensuring a comfortable living space conducive to your academic journey.
+          <br/>
+          <strong> Free Hostel Accommodation:</strong> <br/>
+          DIU offers free hostel facilities for eligible students. Take advantage of this opportunity to immerse yourself in a supportive learning community. Apply through the student portal for a chance to secure accommodation that complements your educational pursuits.
+          <br/>
+          <strong>Campus Tours:</strong> <br/>
+          Embark on a journey of discovery with our free campus tours. Familiarize yourself with the university's state-of-the-art facilities, modern classrooms, and vibrant student spaces. These tours provide a firsthand experience of the DIU atmosphere..<br>
+                
+          <br/> <br/> THANK YOU</p>
             </div>
           </div>
         </div>
