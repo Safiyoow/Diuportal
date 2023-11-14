@@ -302,7 +302,7 @@ while ($row = mysqli_fetch_array($result)) {
         }else{
              $coreSubjects = $mathsGrade + $EnglishGrade + $SocialGrade + $ScienceGrade;
         }
-
+        
         $coreTotal = $mathsTotal + $ScienceTotal + $EnglishTotal + $SocialTotal;
          $totalScore = $coreTotal + $FrenchTotal + $BDTTotal + $RMETotal + $ICTTotal + $GHLanguageTotal;
 
