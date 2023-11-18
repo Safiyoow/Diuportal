@@ -1,10 +1,10 @@
 <header>
-        <nav class="navbar navbar-expand-lg navbar-primary ">
+        <nav class="navbar navbar-expand-lg navbar-primary  ">
             <div class="container">
-                 <div class="logo">
+                 <div class="logo ">
                     <img class="pe-2"  src="./images/logo.jpg" width="50" height="30" alt="logo ">  DIU Portal</a>
                </div>
-                <ul class="navbar-nav ml-auto"></ul>
+                <ul class="navbar-nav ml-auto "></ul>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a>
                     </li>

@@ -18,7 +18,7 @@
 
 
 
-<body >
+<body class="bg-primary">
 
 
 <nav class="navbar navbar-expand-lg navbar-primary w-auto   ">
