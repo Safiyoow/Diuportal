@@ -26,9 +26,7 @@ if(login())
 
         <button type="submit" name="btnVerifyDetail" class="btn nav-link bg-gradient-primary ">VERIFY DETAILS</button>
 
-  
-      
-
+   
         <button name='btnRegister' type='submit' class='nav-link  btn bg-gradient-primary btn-block'> REGISTER PAGE</button>
 
         <button name='btnReport' type='submit' class='nav-link btn bg-gradient-primary btn-block'> REPORT</button>
@@ -73,23 +71,23 @@ if(login())
             <p>
               Dear Student,  <br/>
 
-Welcome to Dhaka International University (DIU)! Your gateway to knowledge, growth, and a vibrant academic community.
-<br/>
-<strong>Research Study: </strong>  <br/>
-We invite you to participate in our ongoing research aimed at understanding the hypokinetic risk factor of diseases for life modification. Your insights will contribute to the enhancement of health awareness and interventions.
-<br/>
-<strong> Campus Safety: </strong> <br/>
-DIU is dedicated to providing a secure environment. Our commitment extends to fostering a campus free from sexual harassment, assault, stalking, and intimate partner violence. Your safety and well-being are our top priorities.
-<br/>
-<strong> Student Portal: </strong><br/>
-Explore the DIU Student Portal for a seamless academic experience. Access important resources, view grades, and stay updated on campus news. This platform also allows you to apply for free hostel accommodation, ensuring a comfortable living space conducive to your academic journey.
-<br/>
-<strong> Free Hostel Accommodation:</strong> <br/>
-DIU offers free hostel facilities for eligible students. Take advantage of this opportunity to immerse yourself in a supportive learning community. Apply through the student portal for a chance to secure accommodation that complements your educational pursuits.
-<br/>
-<strong>Campus Tours:</strong> <br/>
-Embark on a journey of discovery with our free campus tours. Familiarize yourself with the university's state-of-the-art facilities, modern classrooms, and vibrant student spaces. These tours provide a firsthand experience of the DIU atmosphere..<br>
-       
+              Welcome to Dhaka International University (DIU)! Your gateway to knowledge, growth, and a vibrant academic community.
+              <br/>
+              <strong>Research Study: </strong>  <br/>
+              We invite you to participate in our ongoing research aimed at understanding the hypokinetic risk factor of diseases for life modification. Your insights will contribute to the enhancement of health awareness and interventions.
+              <br/>
+              <strong> Campus Safety: </strong> <br/>
+              DIU is dedicated to providing a secure environment. Our commitment extends to fostering a campus free from sexual harassment, assault, stalking, and intimate partner violence. Your safety and well-being are our top priorities.
+              <br/>
+              <strong> Student Portal: </strong><br/>
+              Explore the DIU Student Portal for a seamless academic experience. Access important resources, view grades, and stay updated on campus news. This platform also allows you to apply for free hostel accommodation, ensuring a comfortable living space conducive to your academic journey.
+              <br/>
+              <strong> Free Hostel Accommodation:</strong> <br/>
+              DIU offers free hostel facilities for eligible students. Take advantage of this opportunity to immerse yourself in a supportive learning community. Apply through the student portal for a chance to secure accommodation that complements your educational pursuits.
+              <br/>
+              <strong>Campus Tours:</strong> <br/>
+              Embark on a journey of discovery with our free campus tours. Familiarize yourself with the university's state-of-the-art facilities, modern classrooms, and vibrant student spaces. These tours provide a firsthand experience of the DIU atmosphere..<br>
+                    
 <br/> <br/> THANK YOU</p>
             </div>
           </div>
@@ -170,7 +168,7 @@ Embark on a journey of discovery with our free campus tours. Familiarize yoursel
                           </tr>
                           <tr>
                           <th align="left">POSITION</th>
-                          <td> <?php echo strtoupper($row['position']); ?></td>
+                          <td> <?php echo strtoupper($row['workstatus']); ?></td>
                           </tr>
                           <tr>
                           <th align="left">EMAIL ADDRESS</th>
@@ -277,7 +275,7 @@ if (isset($_GET['btnTourService'])) {
                           </tr>
                           <tr>
                           <th align="left">POSITION</th>
-                          <td> <?php echo strtoupper($row['position']); ?></td>
+                          <td> <?php echo strtoupper($row['workstatus']); ?></td>
                           </tr>
                           <tr>
                           <th align="left">EMAIL ADDRESS</th>
@@ -505,6 +503,44 @@ if (isset($_GET['btnTourService'])) {
                 </div>
               </div>
             </div>
+            
+            <!-- Total Employee Script -->
+            <?php
+             $query = "SELECT * FROM sba_users";
+             $select_all_employees = mysqli_query($connection,$query);
+             $totalEmployees = mysqli_num_rows($select_all_employees);
+             ?>
+            <!-- Total Employees -->
+             <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-30 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-mb font-weight-bold text-primary text-uppercase mb-1">TOTAL NUMBER OF staffs</div>
+                      <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                          <div class="h3 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo $totalEmployees; ?></div>
+                        </div>
+                        <div class="col">
+                          <div class="progress progress-sm mr-2">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <?php
+           $query = "SELECT * FROM sba_users";
+           $select_all_sba_users = mysqli_query($connection,$query);
+           $totalSBAUsers = mysqli_num_rows($select_all_sba_users);
+         ?>
   
 
             <!-- Total Students Script -->
@@ -736,6 +772,8 @@ if (isset($_GET['btnTourService'])) {
             <div class='card-header py-3 d-flex flex-row align-items-center justify-content-between'>
               <h6 class='m-0 font-weight-bold text-primary'>SEARCH STAFF</h6>
             </div>
+       
+
             <div class='card-body'>
               <div class="table-responsive">
                   <table class="table table-bordered table-hover table-striped">
@@ -836,7 +874,7 @@ if (isset($_GET['btnTourService'])) {
                     }
                     else
                    {
-                    echo "No Result Found For the username Entered, checj and Try Again... ";
+                    echo "No Result Found For the username Entered, check and Try Again... ";
                   }
                     ?>
                 </div>
@@ -1186,26 +1224,21 @@ if (isset($_GET['btnTourService'])) {
               </div>
             </div>
 
-  </div>
- 
- 
-
             
-
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-30 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-mb font-weight-bold text-primary text-uppercase mb-1">
-                        <a href="">Student</a>
+                        <a href="../register/register.staff.php">Staff</a>
                       </div>
                       <div class="row no-gutters align-items-center text-uppercase">
                         <div class="col">
                           <li class="nav-item active">
-                  <a class="nav-link btn-primary font-weight-bold" style="border-radius: 20px;" href="../students/index.php">
+                  <a class="nav-link btn-primary font-weight-bold" style="border-radius: 20px;" href="../register/register.sba.php">
                     <i class="fas fa fa-arrow-circle-right"></i>
-                    <span>Login</span></a>
+                    <span>register</span></a>
                 </li>
                         </div>
                       </div>
@@ -1214,7 +1247,85 @@ if (isset($_GET['btnTourService'])) {
                 </div>
               </div>
             </div>
+            
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-30 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-mb font-weight-bold text-primary text-uppercase mb-1">
+              <a href="">TUITION FEE</a>
+            </div>
+            <div class="row no-gutters align-items-center text-uppercase">
+              <div class="col">
+                <li class="nav-item active">
+        <a class="nav-link btn-primary font-weight-bold" style="border-radius: 20px;" href="../register/register.fees.php">
+          <i class="fas fa fa-arrow-circle-right"></i>
+          <span>register</span></a>
+      </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  </div>
+ 
+ 
+
+  <div class="row">
+
+
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-30 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-mb font-weight-bold text-primary text-uppercase mb-1">
+              <a href="">Staff Login</a>
+            </div>
+            <div class="row no-gutters align-items-center text-uppercase">
+              <div class="col">
+                <li class="nav-item active">
+        <a class="nav-link btn-primary font-weight-bold" style="border-radius: 20px;" href="../staff/index.php">
+          <i class="fas fa fa-arrow-circle-right"></i>
+          <span>Login</span></a>
+      </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-30 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-mb font-weight-bold text-primary text-uppercase mb-1">
+              <a href="../student/index.php">Student</a>
+            </div>
+            <div class="row no-gutters align-items-center text-uppercase">
+              <div class="col">
+                <li class="nav-item active">
+        <a class="nav-link btn-primary font-weight-bold" style="border-radius: 20px;" href="../student/index.php">
+          <i class="fas fa fa-arrow-circle-right"></i>
+          <span>Login</span></a>
+      </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
   </div>
 
 </div>
