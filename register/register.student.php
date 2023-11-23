@@ -243,8 +243,8 @@ if( isset($_POST['username']) &&
 </div>
 </div>
 
-
-<?php
+<!-- for image retrieving and storing it 
+<?php -->
 	
 	// Facial image upload 
 	if(isset($_FILES['facialImage'])) {

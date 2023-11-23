@@ -243,7 +243,6 @@ if (login()) {
 
 <!-- Personal Information Button -->
   <?php
-  
   if(isset($_GET['btnPersonalDetail']))
   {
     $query = mysqli_query($connection, "SELECT * FROM students WHERE username='$myuser'");
