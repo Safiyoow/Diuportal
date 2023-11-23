@@ -156,7 +156,7 @@ if( isset($_POST['username']) &&
                 <h1 class="h4 text-gray-900 mb-4">Student Registration</h1>
               </div>
               <div class="">
-	<form action="register.student.php" method="POST" class="user">
+	<form action="register.student.php" method="POST" class="user"  enctype="multipart/form-data">
 		 <div class="form-group">
             <input type="text" required="" class="form-control form-control-user" id="exampleLastName" placeholder="Username" name="username" maxlength="30" value="<?php if(isset($username)){echo($username);} ?>">
             </div>
@@ -223,7 +223,12 @@ if( isset($_POST['username']) &&
             <div class="col-sm-6">
              	<input type="text" name="postalAddress" class="form-control form-control-user" placeholder="Postal Address"  maxlength="50"  value="<?php if(isset($postalAddress)){echo($postalAddress);} ?>">
             </div>
-         </div>
+			<div class="form-group">
+				<label for="facialImage">Upload Image:</label>
+				<input type="file" class="form-control-file" id="facialImage" name="facialImage">
+			</div>
+			
+		</div>
           <hr>  
 	<input type="submit" value="Register" class="btn btn-success btn-user btn-block"><br>
 	<input type="reset" value="Cancel" class="btn btn-success btn-user btn-block">
@@ -237,11 +242,49 @@ if( isset($_POST['username']) &&
 
 </div>
 </div>
+
+
 <?php
-
-
-
- ?>                
+	
+	// Facial image upload 
+	if(isset($_FILES['facialImage'])) {
+		$targetDirectory = "uploads/"; // Directory to store uploaded images
+		$targetFile = $targetDirectory . basename($_FILES['facialImage']['name']);
+		$imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+	
+		// Check if the uploaded file is an image
+		$check = getimagesize($_FILES['facialImage']['tmp_name']);
+		if($check !== false) {
+			// Check file size and allowed file types
+			if ($_FILES['facialImage']['size'] > 500000) {
+				echo "Sorry, your file is too large.";
+			} elseif ($imageFileType !== "jpg" && $imageFileType !== "png" && $imageFileType !== "jpeg") {
+				echo "Sorry, only JPG, JPEG, and PNG files are allowed.";
+			} else {
+				// Move the uploaded file to the specified directory
+				if (move_uploaded_file($_FILES['facialImage']['tmp_name'], $targetFile)) {
+					echo "The file " . basename($_FILES['facialImage']['name']) . " has been uploaded.";
+					// Store the file path in the database
+					$filePath = mysqli_real_escape_string($connection, $targetFile); // Escape the file path for SQL
+					$insertQuery = "INSERT INTO files (file_path) VALUES ('$filePath')";
+	
+					if (mysqli_query($connection, $insertQuery)) {
+						echo "File path stored in the database successfully.";
+						// Perform additional actions if needed
+					} else {
+						echo "Error: " . $insertQuery . "<br>" . mysqli_error($connection);
+					}
+				} else {
+					echo "Sorry, there was an error uploading your file.";
+				}
+			}
+		} else {
+			echo "File is not an image.";
+		}
+	}
+	
+	
+ ?>    
         </div>
         </div>
       </div>
