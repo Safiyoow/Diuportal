@@ -262,6 +262,8 @@ if (login()) {
                     while ($row = mysqli_fetch_array($query)) {
                       ?>
                       <tbody>
+                     
+                        
                       <tr>
                         <th>Username</th>
                         <td><?php echo $row['username']; ?></td>
@@ -310,6 +312,35 @@ if (login()) {
                     <?php
                     }
                     ?>
+                     <tr>
+                        <th>Profile Image</th>
+                        <td>
+                        <!-- Perform a query to get the file path -->
+                        <?php
+                         $username = "Safiyoow"; // Adjusted username
+
+                         $query = "SELECT f.file_path 
+                                   FROM files f 
+                                   JOIN students s ON s.username = '$username'";
+                         
+                         $result = mysqli_query($connection, $query);
+                         
+                         if ($result && mysqli_num_rows($result) > 0) {
+                             $row = mysqli_fetch_assoc($result);
+                             $filePath = $row['file_path'];
+                         
+                             if ($filePath && file_exists($filePath)) {
+                                 echo "<img src='$filePath' alt='Profile Image' style='max-width: 200px; max-height: 200px;' />";
+                             } else {
+                                 echo "No image available";
+                             }
+                         } else {
+                             echo "No result found";
+                         }
+                         
+                          ?>
+                        </td>
+                      </tr>
                   </table>
                   <!-- <form action="ho.php" method="GET">
                     <button name="btnUpdatePersonalDetails" class="btn btn-block btn-success">Update Info</button>
